@@ -1,0 +1,19 @@
+{
+  "name": "kong",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "description": "Kong Gateway Library",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@nestjs/axios": "^4.0.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "rxjs": "^7.8.1",
+    "typeorm": "^0.3.20"
+  }
+}

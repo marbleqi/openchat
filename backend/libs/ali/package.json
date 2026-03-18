@@ -1,0 +1,15 @@
+{
+  "name": "ali",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "description": "Alibaba Cloud Library",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@nestjs/axios": "^4.0.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "rxjs": "^7.8.1"
+  }
+}

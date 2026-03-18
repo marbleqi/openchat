@@ -1,0 +1,15 @@
+{
+  "name": "cloud",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "description": "Cloud Services Library",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.0",
+    "typeorm": "^0.3.20"
+  }
+}

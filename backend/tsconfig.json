@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolvePackageJsonExports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2023",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@auth": ["libs/auth/src"],
+      "@auth/*": ["libs/auth/src/*"],
+      "@shared": ["libs/shared/src"],
+      "@shared/*": ["libs/shared/src/*"],
+      "@cloud": ["libs/cloud/src"],
+      "@cloud/*": ["libs/cloud/src/*"],
+      "@kong": ["libs/kong/src"],
+      "@kong/*": ["libs/kong/src/*"],
+      "@ali": ["libs/ali/src"],
+      "@ali/*": ["libs/ali/src/*"],
+      "@tencent": ["libs/tencent/src"],
+      "@tencent/*": ["libs/tencent/src/*"],
+      "@default": ["apps/api/src/default"],
+      "@default/*": ["apps/api/src/default/*"]
+    }
+  }
+}

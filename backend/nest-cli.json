@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/api/tsconfig.app.json"
+  },
+  "projects": {
+    "admin": {
+      "type": "application",
+      "root": "apps/admin",
+      "entryFile": "main",
+      "sourceRoot": "apps/admin/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admin/tsconfig.app.json"
+      }
+    },
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    },
+    "auth": {
+      "type": "library",
+      "root": "libs/auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/auth/tsconfig.lib.json"
+      }
+    },
+    "coordinator": {
+      "type": "application",
+      "root": "apps/coordinator",
+      "entryFile": "main",
+      "sourceRoot": "apps/coordinator/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/coordinator/tsconfig.app.json"
+      }
+    },
+    "executor": {
+      "type": "application",
+      "root": "apps/executor",
+      "entryFile": "main",
+      "sourceRoot": "apps/executor/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/executor/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "cloud": {
+      "type": "library",
+      "root": "libs/cloud",
+      "entryFile": "index",
+      "sourceRoot": "libs/cloud/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/cloud/tsconfig.lib.json"
+      }
+    },
+    "kong": {
+      "type": "library",
+      "root": "libs/kong",
+      "entryFile": "index",
+      "sourceRoot": "libs/kong/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/kong/tsconfig.lib.json"
+      }
+    },
+    "ali": {
+      "type": "library",
+      "root": "libs/ali",
+      "entryFile": "index",
+      "sourceRoot": "libs/ali/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/ali/tsconfig.lib.json"
+      }
+    },
+    "tencent": {
+      "type": "library",
+      "root": "libs/tencent",
+      "entryFile": "index",
+      "sourceRoot": "libs/tencent/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/tencent/tsconfig.lib.json"
+      }
+    }
+  },
+  "monorepo": true,
+  "root": "apps/api"
+}
