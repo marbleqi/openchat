@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, injec
 import { AbstractControl, FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ALLOW_ANONYMOUS } from '@delon/auth';
-import { I18nPipe, _HttpClient } from '@delon/theme';
+import { _HttpClient } from '@delon/theme';
 import { MatchControl } from '@delon/util/form';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -25,7 +25,6 @@ import { finalize } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ReactiveFormsModule,
-    I18nPipe,
     RouterLink,
     NzAlertModule,
     NzFormModule,

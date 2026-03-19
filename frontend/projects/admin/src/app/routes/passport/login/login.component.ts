@@ -26,7 +26,6 @@ import { finalize } from 'rxjs';
   imports: [
     RouterLink,
     ReactiveFormsModule,
-    I18nPipe,
     NzCheckboxModule,
     NzTabsModule,
     NzAlertModule,

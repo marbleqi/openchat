@@ -10,7 +10,7 @@ import { NumberInfoModule } from '@delon/chart/number-info';
 import { G2PieModule } from '@delon/chart/pie';
 import { G2TimelineModule } from '@delon/chart/timeline';
 import { TrendModule } from '@delon/chart/trend';
-import { ALAIN_I18N_TOKEN, _HttpClient } from '@delon/theme';
+import { _HttpClient } from '@delon/theme';
 import { getTimeDistance } from '@delon/util/date-time';
 import { deepCopy } from '@delon/util/other';
 import { SHARED_IMPORTS, yuan } from '@shared';
@@ -39,7 +39,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 export class DashboardAnalysisComponent implements OnInit {
   private readonly http = inject(_HttpClient);
   readonly msg = inject(NzMessageService);
-  private readonly i18n = inject(ALAIN_I18N_TOKEN);
+
   private readonly cdr = inject(ChangeDetectorRef);
 
   data: any = {};
@@ -51,24 +51,24 @@ export class DashboardAnalysisComponent implements OnInit {
     .fill({})
     .map((_, i) => {
       return {
-        title: this.i18n.fanyi('app.analysis.test', { no: i }),
+        title: `工专路 ${i} 号店`,
         total: 323234
       };
     });
   titleMap = {
-    y1: this.i18n.fanyi('app.analysis.traffic'),
-    y2: this.i18n.fanyi('app.analysis.payments')
+    y1: '客流量',
+    y2: '支付笔数'
   };
   searchColumn: STColumn[] = [
-    { title: { text: '排名', i18n: 'app.analysis.table.rank' }, index: 'index' },
+    { title: '排名', index: 'index' },
     {
-      title: { text: '搜索关键词', i18n: 'app.analysis.table.search-keyword' },
+      title: '搜索关键词',
       index: 'keyword',
       click: item => this.msg.success(item.keyword)
     },
     {
       type: 'number',
-      title: { text: '用户数', i18n: 'app.analysis.table.users' },
+      title: '用户数',
       index: 'count',
       sort: {
         compare: (a, b) => a.count - b.count
@@ -76,7 +76,7 @@ export class DashboardAnalysisComponent implements OnInit {
     },
     {
       type: 'number',
-      title: { text: '周涨幅', i18n: 'app.analysis.table.weekly-range' },
+      title: '周涨幅',
       index: 'range',
       render: 'range',
       sort: {

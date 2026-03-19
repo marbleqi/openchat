@@ -25,7 +25,6 @@ import { finalize } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ReactiveFormsModule,
-    I18nPipe,
     RouterLink,
     NzAlertModule,
     NzFormModule,

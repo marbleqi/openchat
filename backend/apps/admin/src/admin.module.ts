@@ -9,6 +9,7 @@ import { SharedModule, ReqInterceptor } from "@shared";
 import { KongModule } from "@kong";
 import { CloudModule } from "@cloud";
 import { AuthModule, TokenGuard } from "@auth";
+import { ChatModule } from "@chat";
 import {
   ReqController,
   OperateController,
@@ -91,6 +92,7 @@ import {
     AuthModule,
     KongModule,
     CloudModule,
+    ChatModule,
   ],
   controllers: [
     ReqController,

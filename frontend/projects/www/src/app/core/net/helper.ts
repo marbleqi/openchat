@@ -1,13 +1,22 @@
 import { HttpHeaders, HttpResponseBase } from '@angular/common/http';
-import { Injector, inject } from '@angular/core';
+import { Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { DA_SERVICE_TOKEN } from '@delon/auth';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 export interface ReThrowHttpError {
   body: unknown;
   _throw: true;
+}
+
+export function getAdditionalHeaders(headers?: HttpHeaders): Record<string, string> {
+  const res: Record<string, string> = {};
+  const lang = 'zh-CN';
+  if (!headers?.has('Accept-Language') && lang) {
+    res['Accept-Language'] = lang;
+  }
+
+  return res;
 }
 
 export const CODEMESSAGE: Record<number, string> = {
@@ -35,16 +44,6 @@ export function goTo(injector: Injector, url: string): void {
 export function toLogin(injector: Injector): void {
   injector.get(NzNotificationService).error(`未登录或登录已过期，请重新登录。`, ``);
   goTo(injector, injector.get(DA_SERVICE_TOKEN).login_url!);
-}
-
-export function getAdditionalHeaders(headers?: HttpHeaders): Record<string, string> {
-  const res: Record<string, string> = {};
-  const lang = inject(ALAIN_I18N_TOKEN).currentLang;
-  if (!headers?.has('Accept-Language') && lang) {
-    res['Accept-Language'] = lang;
-  }
-
-  return res;
 }
 
 export function checkStatus(injector: Injector, ev: HttpResponseBase): void {

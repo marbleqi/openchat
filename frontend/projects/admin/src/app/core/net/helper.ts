@@ -2,7 +2,6 @@ import { HttpHeaders, HttpResponseBase } from '@angular/common/http';
 import { Injector, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { DA_SERVICE_TOKEN } from '@delon/auth';
-import { ALAIN_I18N_TOKEN } from '@delon/theme';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 export interface ReThrowHttpError {
@@ -39,7 +38,7 @@ export function toLogin(injector: Injector): void {
 
 export function getAdditionalHeaders(headers?: HttpHeaders): Record<string, string> {
   const res: Record<string, string> = {};
-  const lang = inject(ALAIN_I18N_TOKEN).currentLang;
+  const lang = 'zh-CN';
   if (!headers?.has('Accept-Language') && lang) {
     res['Accept-Language'] = lang;
   }

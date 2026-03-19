@@ -9,7 +9,7 @@ import {
   RouterFeatures,
   withViewTransitions
 } from '@angular/router';
-import { I18NService, defaultInterceptor, provideBindAuthRefresh, provideStartup } from '@core';
+import { defaultInterceptor, provideBindAuthRefresh, provideStartup } from '@core';
 import { provideCellWidgets } from '@delon/abc/cell';
 import { provideSTWidgets } from '@delon/abc/st';
 import { authSimpleInterceptor, provideAuth } from '@delon/auth';
@@ -36,7 +36,7 @@ const defaultLang: AlainProvideLang = {
 
 const alainConfig: AlainConfig = {
   st: { modal: { size: 'lg' } },
-  pageHeader: { homeI18n: 'home' },
+  pageHeader: { home: '首页' },
   lodop: {
     license: `A59B099A586B3851E0F0D7FDBF37B603`,
     licenseA: `C94CEE276DB2187AE6B65D56B3FC2848`
@@ -56,7 +56,7 @@ if (environment.useHash) routerFeatures.push(withHashLocation());
 const providers: Array<Provider | EnvironmentProviders> = [
   provideHttpClient(withInterceptors([...(environment.interceptorFns ?? []), authSimpleInterceptor, defaultInterceptor])),
   provideRouter(routes, ...routerFeatures),
-  provideAlain({ config: alainConfig, defaultLang, i18nClass: I18NService, icons: [...ICONS_AUTO, ...ICONS] }),
+  provideAlain({ config: alainConfig, defaultLang, icons: [...ICONS_AUTO, ...ICONS] }),
   provideNzConfig(ngZorroConfig),
   provideAuth(),
   provideCellWidgets(...CELL_WIDGETS),

@@ -1,0 +1,72 @@
+<layout-default [options]="options" [asideUser]="asideUserTpl" [content]="contentTpl" [customError]="null">
+  <layout-default-header-item direction="left">
+    <a layout-default-header-item-trigger href="//github.com/ng-alain/ng-alain" target="_blank">
+      <nz-icon nzType="github" />
+    </a>
+  </layout-default-header-item>
+  <layout-default-header-item direction="left" hidden="mobile">
+    <a layout-default-header-item-trigger routerLink="/passport/lock">
+      <nz-icon nzType="lock" />
+    </a>
+  </layout-default-header-item>
+  <layout-default-header-item direction="left" hidden="pc">
+    <div layout-default-header-item-trigger (click)="searchToggleStatus = !searchToggleStatus">
+      <nz-icon nzType="search" />
+    </div>
+  </layout-default-header-item>
+  <layout-default-header-item direction="middle">
+    <header-search class="alain-default__search" [(toggleChange)]="searchToggleStatus" />
+  </layout-default-header-item>
+  <layout-default-header-item direction="right">
+    <header-notify />
+  </layout-default-header-item>
+  <layout-default-header-item direction="right" hidden="mobile">
+    <header-task />
+  </layout-default-header-item>
+  <layout-default-header-item direction="right" hidden="mobile">
+    <header-icon />
+  </layout-default-header-item>
+  <layout-default-header-item direction="right" hidden="mobile">
+    <div layout-default-header-item-trigger nz-dropdown [nzDropdownMenu]="settingsMenu" nzTrigger="click" nzPlacement="bottomRight">
+      <nz-icon nzType="setting" />
+    </div>
+    <nz-dropdown-menu #settingsMenu="nzDropdownMenu">
+      <div nz-menu style="width: 200px">
+        <div nz-menu-item>
+          <header-rtl />
+        </div>
+        <div nz-menu-item>
+          <header-fullscreen />
+        </div>
+        <div nz-menu-item>
+          <header-clear-storage />
+        </div>
+      </div>
+    </nz-dropdown-menu>
+  </layout-default-header-item>
+  <layout-default-header-item direction="right">
+    <header-user />
+  </layout-default-header-item>
+  <ng-template #asideUserTpl>
+    <div nz-dropdown nzTrigger="click" [nzDropdownMenu]="userMenu" class="alain-default__aside-user">
+      <nz-avatar class="alain-default__aside-user-avatar" [nzSrc]="user.avatar" />
+      <div class="alain-default__aside-user-info">
+        <strong>{{ user.name }}</strong>
+        <p class="mb0">{{ user.email }}</p>
+      </div>
+    </div>
+    <nz-dropdown-menu #userMenu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item routerLink="/pro/account/center">个人中心</li>
+        <li nz-menu-item routerLink="/pro/account/settings">个人设置</li>
+      </ul>
+    </nz-dropdown-menu>
+  </ng-template>
+  <ng-template #contentTpl>
+    <router-outlet />
+  </ng-template>
+</layout-default>
+@if (showSettingDrawer) {
+  <setting-drawer />
+}
+<theme-btn />

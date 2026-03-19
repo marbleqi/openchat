@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
-import { I18nPipe } from '@delon/theme';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import screenfull from 'screenfull';
 
@@ -7,13 +6,13 @@ import screenfull from 'screenfull';
   selector: 'header-fullscreen',
   template: `
     <nz-icon [nzType]="status ? 'fullscreen-exit' : 'fullscreen'" />
-    {{ (status ? 'menu.fullscreen.exit' : 'menu.fullscreen') | i18n }}
+    {{ status ? '退出全屏' : '全屏' }}
   `,
   host: {
     '[class.flex-1]': 'true'
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NzIconModule, I18nPipe]
+  imports: [NzIconModule]
 })
 export class HeaderFullScreenComponent {
   status = false;

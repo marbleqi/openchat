@@ -5,7 +5,7 @@
     </div>
     <form nz-form [formGroup]="f" (ngSubmit)="submit()" role="form" class="mt-md">
       <nz-form-item>
-        <nz-form-control [nzErrorTip]="'validation.password.required' | i18n">
+        <nz-form-control nzErrorTip="请输入密码！">
           <nz-input-password>
             <input type="password" autocomplete="new-password" nz-input formControlName="password" />
           </nz-input-password>
@@ -13,7 +13,7 @@
       </nz-form-item>
       <div nz-row nzType="flex" nzAlign="middle">
         <div nz-col [nzOffset]="12" [nzSpan]="12" style="text-align: right">
-          <button nz-button [disabled]="!f.valid" nzType="primary">{{ 'app.lock' | i18n }}</button>
+          <button nz-button [disabled]="!f.valid" nzType="primary">锁屏</button>
         </div>
       </div>
     </form>

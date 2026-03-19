@@ -20,7 +20,7 @@
     "useDefineForClassFields": false,
     "baseUrl": "./",
     "paths": {
-      "@shared": ["projects/www/src/app/shared/index"],
+      "@shared": ["projects/shared/src/public-api"],
       "@core": ["projects/www/src/app/core/index"],
       "@env/*": ["projects/www/src/environments/*"],
       "@_mock": [
